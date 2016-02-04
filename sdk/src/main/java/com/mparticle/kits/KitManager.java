@@ -607,6 +607,9 @@ public class KitManager implements MPActivityCallbacks {
         if (setInstallReferrer(context, intent, "com.flurry.android.InstallReceiver")) {
             ConfigManager.log(MParticle.LogLevel.DEBUG, "Sent referral info to Flurry SDK");
         }
+        if (setInstallReferrer(context, intent, "com.appsflyer.AppsFlyerLib")) {
+            ConfigManager.log(MParticle.LogLevel.DEBUG, "Sent referral info to Appsflyer SDK");
+        }
     }
 
     public List<Integer> getSupportedKits() {
