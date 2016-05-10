@@ -2,16 +2,15 @@ ext {
     kitDescription = 'Carnival Kit for the mParticle SDK'
 }
 
+repositories {
+    flatDir {
+        dirs 'libs'
+    }
+}
+
 apply from: '../../scripts/kit-common.gradle'
 apply from: '../../scripts/maven.gradle'
 
-//repositories {
-//    maven {
-//        url "https://github.com/carnivalmobile/maven-repository/raw/master/"
-//    }
-//}
-//
-//dependencies {
-//    compile 'com.android.support:appcompat-v7:23.2.1'
-//    compile 'com.carnival.sdk:carnival:3.+'
-//}
+dependencies {
+    compile ':carnival:3.0.2@aar'
+}

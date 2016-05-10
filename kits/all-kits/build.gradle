@@ -16,6 +16,14 @@ android {
     }
 }
 
+repositories {
+    project(':kits').getChildProjects().findAll { it.getValue() != project}.each {
+        it.getValue().getRepositories().each {
+            repo -> repositories.add(repo)
+        }
+    }
+}
+
 dependencies {
     project(':kits').getChildProjects().findAll { it.getValue() != project}.each {
         proj -> compile proj.getValue()
